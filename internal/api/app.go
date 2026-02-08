@@ -12,6 +12,7 @@ func NewApp(logger *zap.Logger, userHandler *handler.UserHandler) *fiber.App {
 	app := fiber.New()
 
 	app.Use(middleware.Logger(logger))
+	RegisterSwagger(app)
 	RegisterRoutes(app, userHandler)
 
 	return app

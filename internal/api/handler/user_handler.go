@@ -21,6 +21,16 @@ func NewUserHandler(service *service.UserService, logger *zap.Logger) *UserHandl
 	}
 }
 
+// GetUser godoc
+// @Summary      Get user by ID
+// @Description  Returns user info by ID
+// @Tags         users
+// @Accept       json
+// @Produce      json
+// @Param        id   path      int  true  "User ID"
+// @Success      200  {object}  model.User
+// @Failure      400  {object}  map[string]string
+// @Router       /users/{id} [get]
 func (h *UserHandler) GetUser(c *fiber.Ctx) error {
 	id, err := strconv.Atoi(c.Params("id"))
 	if err != nil {

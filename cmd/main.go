@@ -1,5 +1,11 @@
 package main
 
+// @title           Go Backend API
+// @version         1.0
+// @description     Simple Fiber API
+// @host            localhost:8080
+// @BasePath        /
+
 import (
 	"log"
 
